@@ -28,53 +28,45 @@ const BirthdayInvitation: React.FC<BirthdayInvitationProps> = ({
       <img
         src={ravena}
         alt="Aniversário"
-        style={{
-          width: '200px',
-          height: '200px',
-          borderRadius: '50%',
-          display: 'block',
-          margin: '0 auto 20px auto',
-        }}
+        style={styles.image}
       />
-      <h1 style={{
-        fontSize: '3em',
-        fontWeight: 'bold',
-        marginBottom: '10px',
-        textAlign: 'center',
-      }}>
-        Você está convidado para o aniversário de {name}!
-      </h1>
-      <p style={{
-        fontSize: '1.3em',
-        marginBottom: '25px',
-        textAlign: 'center',
-      }}>
-        <strong>Data:</strong> {date}
-      </p>
-      <p style={{
-        fontSize: '1.3em',
-        marginBottom: '25px',
-        textAlign: 'center',
-      }}>
-        <strong>Local:</strong> {location}
-      </p>
-      <button
-        style={{
-          padding: '20px 20px',
-          fontSize: '20px',
-          backgroundColor: '#af4c99',
-          color: 'white',
-          border: 'none',
-          borderRadius: '5px',
-          cursor: 'pointer',
-          width: '100%',
-        }}
-        onClick={handleRsvp}
-      >
-        Confirmar Presença
-      </button>
+      <h1 style={styles.title}>Você está convidado para o aniversário de {name}!</h1>
+      <p style={styles.details}><strong>Data:</strong> {date}</p>
+      <p style={styles.details}><strong>Local:</strong> {location}</p>
+      <button style={styles.button} onClick={handleRsvp}>Confirmar Presença</button>
     </div>
   );
+};
+
+const styles: { [key: string]: React.CSSProperties } = {
+  image: {
+    width: '200px',
+    height: '200px',
+    borderRadius: '50%',
+    display: 'block',
+    margin: '0 auto 20px auto',
+  },
+  title: {
+    fontSize: '3em',
+    fontWeight: 'bold',
+    marginBottom: '10px',
+    textAlign: 'center',
+  },
+  details: {
+    fontSize: '1.3em',
+    marginBottom: '25px',
+    textAlign: 'center',
+  },
+  button: {
+    padding: '20px 20px',
+    fontSize: '20px',
+    backgroundColor: '#af4c99',
+    color: 'white',
+    border: 'none',
+    borderRadius: '5px',
+    cursor: 'pointer',
+    width: '100%',
+  },
 };
 
 export default BirthdayInvitation;
